@@ -1,4 +1,4 @@
-class Hero
+class HeroTemplate
   attr_reader :damage, :abilities
 
   def initialize
@@ -34,7 +34,7 @@ class Hero
   end
 end
 
-class Warrior < Hero
+class Warrior < HeroTemplate
 
   def damage_rating
     15
@@ -49,7 +49,7 @@ class Warrior < Hero
   end
 end
 
-class Mage < Hero
+class Mage < HeroTemplate
 
   def damage_rating
     7

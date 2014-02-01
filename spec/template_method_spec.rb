@@ -4,7 +4,7 @@ require_relative '../lib/template_method.rb'
 describe 'Template Method Pattern' do
 
   context 'Default Hero' do
-    let(:hero) { Hero.new }
+    let(:hero) { HeroTemplate.new }
     it 'has default damage rating of 10' do
       expect(hero.damage).to eq(10)
     end
