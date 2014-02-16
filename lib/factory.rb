@@ -1,3 +1,42 @@
+class Party
+  attr_reader :members
+
+  def initialize(factory)
+    @members = []
+    @factory = factory
+  end
+
+  def add_warrior(number)
+    number.times { @members << @factory.create_warrior }
+  end
+
+  def add_mage(number)
+    number.times { @members << @factory.create_mage }
+  end
+end
+
+class HeroFactory
+  def create_warrior
+    Warrior.new
+  end
+
+  def create_mage
+    Mage.new
+  end
+end
+
+class PartyFactory < Party
+
+  def create(occupation)
+    if [:warrior, :mage].include? occupation
+      self.class.const_get(occupation.to_s.capitalize).new
+    else
+      raise "Unknown hero type"
+    end
+  end
+
+end
+
 class HeroTemplate
   attr_reader :damage, :abilities
 
