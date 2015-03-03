@@ -4,6 +4,7 @@ class HeroSingleton
   def self.instance
     @@instance ||= HeroFactory.send(:new)
     @@instance
+    puts ''
   end
 
   def create_warrior
