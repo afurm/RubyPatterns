@@ -23,7 +23,7 @@ describe 'Command Pattern' do
   end
 
   describe Reactor do
-    it 'is fixed if commands are executed in the right order' do
+    xit 'is fixed if commands are executed in the right order' do
       computer = Computer.new
       computer.add(AmplifyCommand.new)
       computer.add(CalibrateDriverCommand.new)
