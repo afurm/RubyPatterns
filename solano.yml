@@ -1,0 +1,7 @@
+notify:
+- channel: email
+  trigger-on: done
+  message: "[Solano CI] Build %build-id% %status% from %repo%/%branch% with profile %profile-name% Success:%passed-count% Failures:%failed-count% "
+  recipients:
+  - committers
+  - afurm@solanolabs.com
